@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+void AdditiveInverse() {
+    int n;
+    printf("Enter a number: ");
+    scanf("%d", &n);
+    (n >= 0) ? printf("Additive Inverse: %d + (-%d) = 0", n, n) : printf("Additive Inverse: %d - (-%d) = 0", n, n * -1);
+}
+
+int main(void) {
+    AdditiveInverse();
+
+    return 0;
+}
