@@ -1,0 +1,97 @@
+#include <stdio.h>
+#include <math.h>
+
+void AdditiveInverse() {
+    float x;
+    printf("Enter a value: ");
+    scanf("%f", &x);
+    if (x == 0) {
+        printf("Additive Inverse: %.2f + (%.2f) = %.2f", x, x, x);
+    }
+    else if (x >= 1) {
+        printf("Additive Inverse: %.2f + (%.2f) = %.2f", x, x * -1, x + (x * -1));
+    }
+    else {
+        printf("Additive Inverse: %.2f + (%.2f) = %.2f", x, x * -1, x + (x * -1));
+    }
+}
+
+void AbsoluteValue() {
+    float x;
+    printf("Enter a value: ");
+    scanf("%f", &x);
+    printf("Absoulute Value: %.1f", fabs(x));
+}
+
+void Factorial() {
+    int x;
+    int temporary = 1;
+
+    printf("Enter a value: ");
+    scanf("%d", &x);
+    while (x != 0) {
+        temporary = temporary * x;
+        x--;
+    }
+    printf("%d", temporary);
+}
+
+void Calculator() {
+    float x, y;
+    int choice;
+    printf("Enter the first value: ");
+    scanf("%f", &x);
+    printf("Enter the second value: ");
+    scanf("%f", &y);
+    printf("1. Add \n2. Subtract\n3. Multiply\n4. Divide\n");
+    scanf("%d", &choice);
+
+    switch (choice) {
+    case 1:
+        printf("Sum: %.2f", x + y);
+        break;
+    case 2:
+        printf("Difference: %.2f", x - y);
+        break;
+    case 3:
+        printf("Product: %.2f", x * y);
+        break;
+    case 4:
+        printf("Sum: %.2f", x / y);
+        break;
+    default:
+        printf("Are you an idiot?");
+        break;
+    }
+}
+
+void Signs() {
+    int number;
+
+    printf("1. Additive Inverse\n2. Absolute Value\n3. Factorial\n4. Calculator\n");
+    printf("Enter the corresponding number for specific operation: ");
+    scanf("%d", &number);
+
+    switch (number) {
+    case 1:
+        AdditiveInverse();
+        break;
+    case 2:
+        AbsoluteValue();
+        break;
+    case 3:
+        Factorial();
+        break;
+    case 4:
+        Calculator();
+        break;
+    default:
+        printf("Are you an idiot?");
+    }
+}
+
+int main(void) {
+    Signs();
+
+    return 0;
+}
